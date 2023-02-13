@@ -1,0 +1,133 @@
+@import '~bootstrap/scss/bootstrap';
+
+header.container {
+    width: 80%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+
+    div.logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            padding: 0;
+
+            li {
+                padding: .7rem;
+                list-style-type: none;
+                text-transform: uppercase;
+                font-size: .8rem;
+                font-weight: 700;
+                color: rgb(90, 90, 90);
+                border-bottom: 2px solid transparent;
+
+                &.active {
+                    color: #0c7cec;
+                    border-bottom: 2px solid #0c7cec;
+                }
+            }
+        }
+    }
+}
+
+section.jumbo {
+    height: 350px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+section.DC-comics_nav {
+    background-image: url(../assets/img/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    overflow: hidden;
+
+
+    div.DC-container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        height: 300px;
+
+        div.navs {
+            width: 45%;
+            height: 100%;
+            display: flex;
+
+            div.nav {
+                width: calc(100% / 3);
+                padding: .7rem;
+
+                p {
+                    font-weight: 700;
+                    margin: .6rem 0;
+                }
+            }
+
+            ul li {
+                list-style-type: none;
+                font-size: .8rem;
+                color: gray;
+                padding: .2rem 0;
+            }
+        }
+
+        div.DC-img img {
+            width: 450px;
+        }
+    }
+}
+
+section.contacts-gray {
+    background-color: #2f2f2f;
+    height: 90px;
+
+
+    div.contacts-container {
+        width: 80%;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div.button button {
+            border: 2px solid #0c7cec;
+            text-transform: uppercase;
+            color: white;
+            padding: .8rem;
+            background-color: #2f2f2f;
+        }
+
+        p {
+            text-transform: uppercase;
+            color: #0c7cec;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        div.contacts img {
+            padding: .5rem;
+        }
+    }
+}
