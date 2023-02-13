@@ -6,9 +6,9 @@
     </div>
     <nav>
         <ul>
-            {{-- @foreach ($navBarEl as $item)   
-            <li>{{$item}}</li>
-            @endforeach --}}
+            <li>
+                <a href="{{route('products.index')}}">Products</a>
+            </li>
         </ul>
     </nav>
 </header>
