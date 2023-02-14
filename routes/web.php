@@ -18,4 +18,5 @@ Route::get('/', function () {
 })->name("home");
 
 Route::get('/products', [ComicController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
 Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');

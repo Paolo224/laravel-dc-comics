@@ -7,7 +7,7 @@
     <nav>
         <ul>
             <li>
-                <a href="{{route('products.index')}}">Products</a>
+                <a class="btn btn-outline-primary" href="{{route('products.index')}}">Products</a>
             </li>
         </ul>
     </nav>
