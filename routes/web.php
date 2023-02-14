@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('home');
 })->name("home");
 
-Route::get('/products', [ComicController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
-Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
-Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+// Route::get('/products', [ComicController::class, 'index'])->name('products.index');
+// Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
+// Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
+// Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+
+Route::resource('products', ComicController::class);

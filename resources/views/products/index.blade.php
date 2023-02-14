@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
 @section('back-content')
-<div class="container">
+<div>
     <div class="row">
         <div class="offset-10 col-2">
             <a class="btn btn-primary btn-sm" href="{{route('products.create')}}">Inserisci un fumetto!</a>
