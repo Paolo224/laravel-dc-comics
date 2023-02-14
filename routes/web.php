@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComicController as ComicController;
+use App\Http\Controllers\Admin\ProductController as ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +22,4 @@ Route::get('/', function () {
 // Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
 // Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
 
-Route::resource('products', ComicController::class);
+Route::resource('products', ProductController::class);
