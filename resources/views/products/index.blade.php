@@ -40,7 +40,7 @@
                                     SHOW
                                 </button>
                             </a>
-                            <a href="">
+                            <a href="{{route('products.edit', $product->id)}}">
                                 <button class="btn btn-sm btn-warning mb-1">
                                     EDIT
                                 </button>

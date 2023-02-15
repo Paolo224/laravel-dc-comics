@@ -16,7 +16,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        //dd($products);
         return view('products.index', compact('products'));
     }
 
@@ -39,15 +38,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $dati = $request->all();
-        $newComic = new Product();
-        $newComic->title = $dati['title'];
-        $newComic->description = $dati['description'];
-        $newComic->thumb = $dati['thumb'];
-        $newComic->price = $dati['price'];
-        $newComic->series = $dati['series'];
-        $newComic->sale_date = $dati['sale_date'];
-        $newComic->type = $dati['type'];
-        $newComic->save();
+        $newProduct = new Product();
+        $newProduct->title = $dati['title'];
+        $newProduct->description = $dati['description'];
+        $newProduct->thumb = $dati['thumb'];
+        $newProduct->price = $dati['price'];
+        $newProduct->series = $dati['series'];
+        $newProduct->sale_date = $dati['sale_date'];
+        $newProduct->type = $dati['type'];
+        $newProduct->save();
 
         return redirect()->route('products.index');
     }
@@ -61,7 +60,6 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        //dd($product);
         return view('products.show', compact('product'));
     }
 
@@ -74,7 +72,6 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        //dd($product);
         return view('products.edit', compact('product'));
     }
 
@@ -87,7 +84,18 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dati = $request->all();
+        $product = Product::findOrFail($id); //Dato prima di essere aggiornato
+        $product->title = $dati['title'];
+        $product->description = $dati['description'];
+        $product->thumb = $dati['thumb'];
+        $product->price = $dati['price'];
+        $product->series = $dati['series'];
+        $product->sale_date = $dati['sale_date'];
+        $product->type = $dati['type'];
+        $product->save();
+
+        return redirect()->route('products.show', $product->id);
     }
 
     /**

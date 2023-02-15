@@ -9,7 +9,6 @@
         </div>
         <div class="row">
             <div class="col-12">
-                @dump($product)
                 <form action="{{route('products.update', $product->id)}}" method="POST">
                     @csrf
                     @method('PUT')
