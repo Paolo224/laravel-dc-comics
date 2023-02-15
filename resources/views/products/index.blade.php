@@ -45,11 +45,13 @@
                                     EDIT
                                 </button>
                             </a>
-                            <a href="">
-                                <button class="btn btn-sm btn-danger">
-                                    DELETE
-                                </button>
-                            </a>
+                            <form action="{{route('products.destroy', $product->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                    <button class="btn btn-sm btn-danger">
+                                        DELETE
+                                    </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
