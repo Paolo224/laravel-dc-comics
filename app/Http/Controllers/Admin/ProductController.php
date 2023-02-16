@@ -39,15 +39,40 @@ class ProductController extends Controller
     {
         $dati = $request->all();
 
-        $request->validate([
-            'title' => 'required|string|min:2|max:120',
-            'description' => 'required|string|min:10',
-            'thumb' => 'required|min:2|url',
-            'price' => 'required|min:2|max:120',
-            'series' => 'required|string|min:2|max:120',
-            'sale_date' => 'required|min:2|max:120',
-            'type' => 'required|string|min:2|max:100',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|string|min:2|max:120',
+                'description' => 'required|string|min:10',
+                'thumb' => 'required|min:2|url',
+                'price' => 'required|numeric',
+                'series' => 'required|string|min:2|max:120',
+                'sale_date' => 'required',
+                'type' => 'required|string|min:2|max:100',
+            ],
+            [
+                'title.required' => 'Il titolo è obbligatorio!!!',
+                'title.min' => 'Il titolo deve avere almeno 2 caratteri!!!',
+                'title.max' => 'Il titolo non può avere più di 120 caratteri!!!',
+                'title.string' => 'Il titolo non può essere di tipo numerico!!!',
+                'description.required' => 'La descrizione è obbligatoria!!!',
+                'description.min' => 'La descrizione deve avere almeno 2 caratteri!!!',
+                'description.string' => 'La descrizione non può essere di tipo numerico!!!',
+                'thumb.required' => 'URL è obbligatorio!!!',
+                'thumb.min' => 'URL deve avere almeno 2 caratteri!!!',
+                'thumb.url' => 'URL inserito non valido!!!',
+                'price.required' => 'Il prezzo è obbligatorio!!!',
+                'price.numeric' => 'Il prezzo non può essere di tipo alfanumerico!!!',
+                'series.required' => 'La serie è obbligatoria!!!',
+                'series.min' => 'La serie deve avere almeno 2 caratteri!!!',
+                'series.max' => 'La serie non può avere più di 120 caratteri!!!',
+                'series.string' => 'La serie non può essere di tipo numerico!!!',
+                'sale_date.required' => 'La data è obbligatoria',
+                'type.required' => 'Il tipo è obbligatorio!!!',
+                'type.min' => 'Il tipo deve avere almeno 2 caratteri!!!',
+                'type.max' => 'Il tipo non può avere più di 120 caratteri!!!',
+                'type.string' => 'Il tipo non può essere di tipo numerico!!!',
+            ]
+        );
 
         $newProduct = new Product();
         $newProduct->title = $dati['title'];
