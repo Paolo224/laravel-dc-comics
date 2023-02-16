@@ -38,6 +38,17 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $dati = $request->all();
+
+        $request->validate([
+            'title' => 'required|string|min:2|max:120',
+            'description' => 'required|string|min:10',
+            'thumb' => 'required|min:2|url',
+            'price' => 'required|min:2|max:120',
+            'series' => 'required|string|min:2|max:120',
+            'sale_date' => 'required|min:2|max:120',
+            'type' => 'required|string|min:2|max:100',
+        ]);
+
         $newProduct = new Product();
         $newProduct->title = $dati['title'];
         $newProduct->description = $dati['description'];

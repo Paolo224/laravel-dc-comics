@@ -7,6 +7,19 @@
                 <a class="btn btn-primary btn-sm" href="{{route('products.index')}}">Torna alla lista</a>
             </div>
         </div>
+        @if($errors->any()) 
+            <div class="row">
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>
+                            {{$error}}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <form action="{{route('products.store')}}" method="POST">
